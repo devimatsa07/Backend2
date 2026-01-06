@@ -1,8 +1,7 @@
 const express = require('express');
-const app = express();
 
-app.get('/get-data',(req,res)=>{
-    console.log('Responding...');
-});
+const getdata=(req,res) => {  
+    return res.status(200).json('Data fetched successfully');
+}
 
-app.use('/',require('./firstroute'));
+exports.getdata = getdata;
