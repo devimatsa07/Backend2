@@ -60,11 +60,24 @@ const deleteUser = async (req, res) => {
     }
 }
 
+// Function to handle file upload
+const UploadFile = (req, res) => {
+    try {
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).json({ message: 'No files uploaded' });
+        }
+        res.status(200).json({ message: 'Files uploaded successfully', files: req.files });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 // Export the functions so routes can use them
 exports.getdata = getdata;
 exports.addUser = addUser;
 exports.getUsers = getUsers;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
+exports.UploadFile = UploadFile;
 
 

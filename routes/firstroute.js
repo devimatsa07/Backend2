@@ -1,8 +1,5 @@
-// This file defines the routes for the API.
-// Routes tell the server what to do for different URLs.
-
 const express = require('express');
-const route = express.Router() // Create a router
+const route = express.Router() 
 const firstcontroller = require('../controllers/firstcontroller'); // Import the controller functions
 
 // Routes for different actions
