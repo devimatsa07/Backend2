@@ -18,3 +18,9 @@ app.use('/', fileuploadingroute);
 app.listen(9001, () => {
     console.log('Server is running on port 9001');
 });
+
+const cron = require("node-cron");
+
+cron.schedule("*/10 * * * * *", () => {
+  console.log("tasks run every 10 seconds");
+});
